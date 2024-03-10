@@ -1,0 +1,14 @@
+[workspace]
+
+resolver = "1"
+members = [
+    "src/dispute",
+    "src/stablecoin",
+    "src/oracle",
+    "src/oracle-getter",
+    "src/oracle-setter",
+    "src/oracle-randomness",
+    "src/oracle-randomness-getter",
+    "src/oracle-randomness-setter",
+    "src/oracle-randomness-type",
+    ]

@@ -1,0 +1,33 @@
+[package]
+name = "dispute"
+version = "0.0.1"
+authors = ["Scio Labs <hello@scio.xyz>"]
+edition = "2021"
+
+[dependencies]
+ink = { version = "4.3.0", default-features = false }
+ink_prelude = { version = "~4.3.0", default-features = false }
+
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
+scale-info = { version = "2", default-features = false, features = ["derive"], optional = true }
+
+ dia-oracle-randomness-getter = { path = "../oracle-randomness-getter", default-features = false }
+ dia-oracle-randomness-type = { path = "../oracle-randomness-type", default-features = false }
+
+ openbrush = { tag = "4.0.0-beta", git = "https://github.com/Brushfam/openbrush-contracts", default-features = false, features = [
+    "psp22",
+] }
+
+[dev-dependencies]
+ink_e2e = "4.3.0"
+dia-randomness-oracle = { path = "../oracle-randomness", default-features = false }
+dia-oracle-randomness-setter = { path = "../oracle-randomness-setter", default-features = false }
+
+[lib]
+path = "lib.rs"
+
+[features]
+default = ["std"]
+std = ["ink/std", "scale/std", "scale-info/std", "dia-oracle-randomness-getter/std","dia-oracle-randomness-type/std", "openbrush/std"]
+ink-as-dependency = []
+
